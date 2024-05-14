@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product page</title>
+    <style>
+        .product-images {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .product-images img {
+            width: 200px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .product-info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-images">
+        <img src="black.jpeg" alt="Red T-Shirt" onclick="changeColor('black')">
+        <img src="blue.jpg" alt="Blue T-Shirt" onclick="changeColor('blue')">
+        <img src="white.webp" alt="Green T-Shirt" onclick="changeColor('white')">
+    </div>
+    <div class="product-info">
+        <h1>Casual T-Shirt</h1>
+        <p>$15.00</p>
+        <p>Sizes: S, M, L, XL, XXL</p>
+        <p>Color: <span id="selected-color">Select a color</span></p>
+        <input type="number" value="1" min="1" max="10">
+        <button>Add to Cart</button>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            document.getElementById("selected-color").textContent = color.charAt(0).toUpperCase() + color.slice(1);
+            // You can implement code here to change the displayed image based on color selection
+            // For simplicity, we'll just log the selected color
+            console.log("Selected color: " + color);
+        }
+    </script>
+</body>
+</html>
